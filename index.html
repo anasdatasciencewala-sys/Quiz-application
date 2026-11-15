@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    <div class="logo">ANAS <span>CODE ARENA</span></div>
+    <div class="header-text">LEARN • CODE • CONQUER</div>
+</header>
+
+<div class="container">
+
+    <!-- HOME SCREEN -->
+    <section id="homeScreen" class="screen active">
+
+        <div class="hero">
+            <h1>Welcome to <span>Code Arena</span></h1>
+            <p>
+                Test your coding knowledge, solve programming challenges
+                and improve your development skills.
+            </p>
+        </div>
+
+        <div class="levels">
+
+            <div class="level-card" onclick="startQuiz('Easy')">
+                <div class="level-icon"></div>
+                <h2 class="easy">Easy</h2>
+                <p>Beginner coding questions.<br>HTML, CSS and JavaScript basics.</p>
+                <br>
+                <button class="btn">Start Easy</button>
+            </div>
+
+            <div class="level-card" onclick="startQuiz('Medium')">
+                <div class="level-icon"></div>
+                <h2 class="medium">Medium</h2>
+                <p>Test your coding logic.<br>Syntax, concepts and code output.</p>
+                <br>
+                <button class="btn">Start Medium</button>
+            </div>
+
+            <div class="level-card" onclick="startQuiz('Hard')">
+                <div class="level-icon"></div>
+                <h2 class="hard">Hard</h2>
+                <p>Advanced challenges.<br>Programming logic and debugging.</p>
+                <br>
+                <button class="btn">Start Hard</button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- QUIZ SCREEN -->
+    <section id="quizScreen" class="screen">
+
+        <div class="top-info">
+            <span id="levelName">Easy Level</span>
+            <span id="questionNumber">Question 1 / 5</span>
+            <span id="scoreText">Score: 0</span>
+        </div>
+
+        <div class="progress-bg">
+            <div id="progressBar" class="progress"></div>
+        </div>
+
+        <div class="quiz-box">
+
+            <span id="category" class="category">HTML</span>
+
+            <h2 id="questionText" class="question"></h2>
+
+            <div id="codeBox" class="code-box" style="display:none;">
+                <pre id="codeText"></pre>
+            </div>
+
+            <div id="optionsBox" class="options"></div>
+
+            <div id="feedback" class="feedback">
+                <h3 id="feedbackTitle"></h3>
+                <p id="correctAnswer"></p>
+                <p id="explanation"></p>
+            </div>
+
+            <div class="next-area">
+                <button id="nextBtn" class="btn" onclick="nextQuestion()" style="display:none;">
+                    Next Question →
+                </button>
+            </div>
+
+        </div>
+
+        <br>
+        <button class="btn secondary" onclick="goHome()">← Back to Levels</button>
+
+    </section>
+
+
+    <!-- RESULT SCREEN -->
+    <section id="resultScreen" class="screen">
+
+        <div class="result-box">
+
+            <h1>Quiz Completed! 🏆</h1>
+            <p id="resultMessage">Great job!</p>
+
+            <div id="finalScore" class="score">0 / 5</div>
+
+            <p id="percentage"></p>
+
+            <div class="result-actions">
+                <button class="btn" onclick="startQuiz(currentLevel)">
+                    Play Again
+                </button>
+
+                <button class="btn secondary" onclick="goHome()">
+                    Change Level
+                </button>
+            </div>
+
+            <div id="reviewBox" class="review"></div>
+
+        </div>
+
+    </section>
+
+</div>
+
+<footer>
+    © 2026 ANAS CODE ARENA | Keep Learning, Keep Coding
+</footer>
+
+
+</body>
+<script src="./app.js"></script>
+</html>
